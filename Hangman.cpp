@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include "Wordlists.h"
 
 
 using namespace std;
@@ -35,13 +36,13 @@ int main()
     int tries = 6;			//tries set for 6
     int numberselected;     //veriable to pick a word from the word list
 
-    const char* wordlist[5]
-        = { "hello", "world", "name", "coding", "beautiful" };		//word list in an array
+    extern const char* wordlist[49];     //word list in an array can be found in the header
+
 
     printf("Let's play Hangman!\n");
-    printf("You have %i" "tries left\n", tries);
+    printf("You have %i" " tries left\n", tries);
 
-    printf("Enter a number between 0 and 4 to generate a word\n");
+    printf("Enter a number between 0 and 48 to generate a word\n");
     scanf_s("%i", &numberselected);                     //enter a number to be compared to the wordlist to generate a word to play with
     string word = wordlist[numberselected];
 
@@ -80,7 +81,7 @@ int main()
 
     if (tries == 0) {                                            //If tries have ran out the loop will and this statement will run
         printf("You ran out of tries, better luck next time");
-        std::cout << "The correct word is" << word << endl;
+        std::cout << "The correct word is " << word << endl;
     }
 
     return 0;
