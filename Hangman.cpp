@@ -1,5 +1,6 @@
 
 
+
 #include <stdio.h>
 #include <iostream>
 #include <string>
@@ -28,11 +29,15 @@ int lettercheck(char guess, string unknownword, string& guessword) {        //fu
 }
 
 
+
 int main()
 {
-
-
-
+    struct playername
+    {
+        char name;
+        int age;
+    };
+    
     int tries = 6;			//tries set for 6
     int numberselected;     //veriable to pick a word from the word list
 
@@ -54,6 +59,7 @@ int main()
 
     while (word == unknown, tries > 0)        //condition to end loop if word is guessed correctly or tries reaches 0
     {
+        printf("ONLY USING LOWERCASE LETTERS!\n");
         printf("Please guess a letter:\n");
 
         std::cout << unknown << endl;
@@ -69,7 +75,9 @@ int main()
         }
 
         if (word == unknown) {                               //compares if word string is equal to unknown string to determine if you won
-            printf("Congraduations! You win!");
+            
+            printf("You guessed the word correctly\n");
+
             return 0;
         }
 
